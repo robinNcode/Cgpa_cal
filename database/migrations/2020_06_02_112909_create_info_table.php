@@ -14,10 +14,12 @@ class CreateInfoTable extends Migration
     public function up()
     {
         Schema::create('info', function (Blueprint $table) {
+            
             $table->increments('id');
             $table->string('name');
             $table->string('email');
             $table->string('phone');
+
             $table->timestamps();
         });
     }

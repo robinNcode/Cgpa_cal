@@ -14,8 +14,9 @@ class CreateCourseInfoTable extends Migration
     public function up()
     {
         Schema::create('course_info', function (Blueprint $table) {
+
             $table->increments('cr_id');
-            //course_name
+            //course_name.......................................
             $table->string('course_1');
             $table->string('course_2');
             $table->string('course_3');
@@ -23,7 +24,7 @@ class CreateCourseInfoTable extends Migration
             $table->string('course_5');
             $table->string('course_6');
 
-            //marks
+            //marks..............................................
             $table->decimal('mark_1');
             $table->decimal('mark_2');
             $table->decimal('mark_3');
@@ -31,7 +32,7 @@ class CreateCourseInfoTable extends Migration
             $table->decimal('mark_5');
             $table->decimal('mark_6');
 
-            //credits
+            //credits.............................................
             $table->double('credit_1');
             $table->double('credit_2');
             $table->double('credit_3');

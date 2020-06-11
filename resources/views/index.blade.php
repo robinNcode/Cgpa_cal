@@ -85,7 +85,7 @@
     @php
         $i = 1 ;
     @endphp
-    @foreach($new_info as $row )
+    @foreach( $new_info as $row )
         <tr>
             <th scope="row">{{$i++}}</th>
             <td>{{$row -> name}}</td>

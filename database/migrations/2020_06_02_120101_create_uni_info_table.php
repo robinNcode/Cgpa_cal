@@ -14,11 +14,13 @@ class CreateUniInfoTable extends Migration
     public function up()
     {
         Schema::create('uni_info', function (Blueprint $table) {
+
             $table->increments('id');
             $table->string('uni_id');
             $table->string('uni_name');
             $table->string('semster');
             $table->string('pogram');
+            
             $table->timestamps();
         });
     }
