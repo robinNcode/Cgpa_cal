@@ -22,11 +22,16 @@ use Illuminate\Support\Facades\Route;
 
 // .............................. Using Resource Controller Here ....................................
 
-Route::get('/','CgpaController@index');
-Route::match(['get','post'],'store','CgpaController@store');
-Route::get('/form','CgpaController@create');
-Route::get('/show','CgpaController@show');
+Route::resource('/','CgpaController');
+Route::post('store','CgpaController@store')->name('ajaxdata.postdata');
+Route::get('/showing/{id}','CgpaController@show');
+Route::get('/editing/{id}/edit','CgpaController@edit');
+Route::put('/updating/{id}','CgpaController@update')->where('id', '[\d]+');
+Route::delete('/deleting/{id}','CgpaController@destroy');
+Route::get('all/student','CgpaController@allJson')->name('allJson');
 
+Route::get('/form','CgpaController@create');
 Route::get('all','StudentModel@all');
+
             
         

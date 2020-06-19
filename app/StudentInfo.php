@@ -12,4 +12,8 @@ class StudentInfo extends Model
         'name', 'email','phone',
     ];
 
+    protected $hidden = [
+    	'created_at','updated_at'
+    ];
+
 }

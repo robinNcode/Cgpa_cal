@@ -9,9 +9,7 @@
 
 
 
-   <form method="POST" action="{{url('doing')}}">
-      {{ csrf_field() }}
-      <div class="container">
+         <div class="container">
          <legend class="bg-primary">
             <center><i class="fas fa-fw fa-briefcase"></i>All Student Details</center>
          </legend>
@@ -22,7 +20,8 @@
                      <tr>
                         <th>Serial No.</th>
                         <th>Student Name</th>
-                        <th>Student Id</th>
+                        <th>Phone Number</th>
+                        <th> Email</th>
                      </tr>
                   </thead>
                   <tbody>
@@ -34,7 +33,8 @@
                         <tr>
                             <td>{{ $i++ }}</td>
                             <td>{{ $row -> name }}</td>
-                            <td>{{ $row -> email }}</td>
+                            <td>{{ $row -> phone }}</td>
+                            <td>{{ $row -> email }}</td> 
                         </tr>
                         @endforeach
 
@@ -55,12 +55,11 @@
          <div class="card-footer pt-4">
             <div class="row">
                <div class="col-12 text-center">
-                  <button type="submit" class="btn btn-outline-warning">Go Back
-                  </button>
+                  <a href ="/form" type="submit" class="btn btn-outline-warning">Go Back
+                  </a>
                </div>
             </div>
          </div>
-   </form>
    </div>
 </div>
 </div>

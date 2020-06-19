@@ -117,8 +117,8 @@ class StudentModel extends Controller
         $info = DB::table('info')->get();
         $uni_info = DB::table('uni_info')->get();
 
+        //return view ('cgpaTest.all_students_show',compact('info','uni_info'));
         return view ('cgpaTest.all_students_show')->with('new_info',$info);
-        //return view ('cgpaTest.all_students_show')->with('new_info','new_uni_info',$info,$uni_info);
     }
     
 }
