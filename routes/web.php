@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+//..............................Route for normal CRUD ...............................
 
 //Route::get('/form/{name}','FrontEnd@show');
 // Route::get('/form','FrontEnd@index');
@@ -20,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 // Route::match(['get','post'], 'doing','StudentModel@doing');
 //Route::match(['get','post'],'doing','StudentModel@doing')->name('insert');
 
-// .............................. Using Resource Controller Here ....................................
+// .................... Using Resource Controller Here For Ajax CRUD.....................
 
 Route::resource('/','CgpaController');
 Route::post('store','CgpaController@store')->name('ajaxdata.postdata');
@@ -33,5 +34,12 @@ Route::get('all/student','CgpaController@allJson')->name('allJson');
 Route::get('/form','CgpaController@create');
 Route::get('all','StudentModel@all');
 
-            
+
+//..................... Route For Notifications(EMAIL & SMS) .................     
+
+Route::resource('/notification','NotificationController');
+Route::match(['get','post'],'/upload',function(Request $request){
+	dd($request->image);
+});
+Route::post('/mail_me','NotificationController@store');
         

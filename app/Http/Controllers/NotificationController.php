@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Session;
+session_start();
 
-class DemoController extends Controller
+class NotificationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +16,7 @@ class DemoController extends Controller
      */
     public function index()
     {
-        //
+        return view('NotificationsView.index');
     }
 
     /**
@@ -32,9 +35,18 @@ class DemoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        request()->validate(['email_name' => 'required|email']);
+        $email = request('email_name');
+
+        Mail::raw('It works!',function($message){
+            $message->to($email)
+                    ->subject('Hello there');
+        });
+
+        //redirect
+        //dd($email);
     }
 
     /**
